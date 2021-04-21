@@ -1,3 +1,5 @@
+import 'package:coiny/screens/login_screen.dart';
+import 'package:coiny/screens/register_screen.dart';
 import 'package:coiny/widgets/charts.dart';
 import 'package:coiny/widgets/second_chart.dart';
 import 'package:coiny/widgets/third_chart.dart';
@@ -212,7 +214,12 @@ class TabViewColumn extends StatelessWidget {
             child: Column(
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => RegisterScreen(),
+                    ),
+                  ),
                   child: Container(
                     // height: _height * 0.08,
                     padding: EdgeInsets.all(20),
@@ -237,24 +244,32 @@ class TabViewColumn extends StatelessWidget {
                 SizedBox(
                   height: 3,
                 ),
-                Container(
-                  // height: _height * 0.08,
-                  padding: EdgeInsets.all(20),
-                  width: width * 0.8,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    // color: mainColor,
+                GestureDetector(
+                  onTap: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => LoginScreen(),
+                    ),
                   ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: (Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
+                  child: Container(
+                    // height: _height * 0.08,
+                    padding: EdgeInsets.all(20),
+                    width: width * 0.8,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      // color: mainColor,
+                    ),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: (Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                    ),
                   ),
                 ),
               ],
