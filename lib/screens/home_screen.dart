@@ -1,7 +1,6 @@
-import 'package:coiny/screens/tab_view.dart';
-// import 'package:coiny/widgets/charts.dart';
-// import 'package:coiny/widgets/second_chart.dart';
-// import 'package:coiny/widgets/third_chart.dart';
+import 'package:coiny/widgets/charts.dart';
+import 'package:coiny/widgets/second_chart.dart';
+import 'package:coiny/widgets/third_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/constants.dart';
 
@@ -41,8 +40,8 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    // final _width = MediaQuery.of(context).size.width;
-    // final _height = MediaQuery.of(context).size.height;
+    final _width = MediaQuery.of(context).size.width;
+    final _height = MediaQuery.of(context).size.height;
 
     return DefaultTabController(
       length: 4,
@@ -88,14 +87,181 @@ class _HomeScreenState extends State<HomeScreen>
           child: TabBarView(
             physics: NeverScrollableScrollPhysics(),
             children: [
-              TabView(),
-              Icon(Icons.directions_transit, size: 350),
-              Icon(Icons.directions_car, size: 350),
-              Icon(Icons.biotech_outlined, size: 350),
+              TabViewColumn(
+                  tabController: _tabController,
+                  firstGraph: ChartScreen(),
+                  height: _height,
+                  width: _width,
+                  value: 54000.0,
+                  date: '8:00 AM Friday, April 21, 2021'),
+              TabViewColumn(
+                  tabController: _tabController,
+                  firstGraph: SecondChart(),
+                  height: _height,
+                  width: _width,
+                  value: 2300.0,
+                  date: '8:00 AM Friday, April 21, 2021'),
+              TabViewColumn(
+                  tabController: _tabController,
+                  firstGraph: ThirdChart(),
+                  height: _height,
+                  width: _width,
+                  value: 500.0,
+                  date: '8:00 AM Friday, April 21, 2021'),
+              TabViewColumn(
+                  tabController: _tabController,
+                  firstGraph: SecondChart(),
+                  height: _height,
+                  width: _width,
+                  value: 213.0,
+                  date: '8:00 AM Friday, April 21, 2021'),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class TabViewColumn extends StatelessWidget {
+  TabViewColumn({
+    @required this.tabController,
+    this.height,
+    this.width,
+    this.date,
+    this.value,
+    @required this.firstGraph,
+  });
+  final TabController tabController;
+  final double height;
+  final double width;
+  final double value;
+  final date;
+  final firstGraph;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.all(25.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "\$$value",
+                style: TextStyle(fontSize: 38, fontFamily: 'SF'),
+              ),
+              Text(
+                date,
+                style: TextStyle(fontSize: 14),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.all(8),
+          child: Column(
+            children: [
+              Container(
+                height: 45,
+                decoration: BoxDecoration(
+                    // color: Colors.grey[300],
+                    ),
+                child: TabBar(
+                  isScrollable: false,
+                  controller: tabController,
+                  // labelColor: Colors.red,
+                  unselectedLabelColor: Colors.grey,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  tabs: [
+                    TabContent(value: '1H'),
+                    TabContent(value: '1D'),
+                    TabContent(value: '1W'),
+                    TabContent(value: '1Y'),
+                    TabContent(value: 'ALL'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        Divider(
+          height: 2,
+        ),
+        Expanded(
+          child: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: tabController,
+            children: [
+              firstGraph,
+              SecondChart(),
+              ThirdChart(),
+              ChartScreen(),
+              SecondChart(),
+            ],
+          ),
+        ),
+        Divider(
+          height: 2,
+        ),
+        Container(
+          height: height * 0.2,
+          child: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    // height: _height * 0.08,
+                    padding: EdgeInsets.all(20),
+                    width: width * 0.8,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: mainColor,
+                    ),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: (Text(
+                        'Sign up',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 3,
+                ),
+                Container(
+                  // height: _height * 0.08,
+                  padding: EdgeInsets.all(20),
+                  width: width * 0.8,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    // color: mainColor,
+                  ),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: (Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -137,4 +303,3 @@ class TabContent extends StatelessWidget {
     );
   }
 }
-
