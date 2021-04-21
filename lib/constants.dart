@@ -7,3 +7,5 @@ final Widget svgLogo = SvgPicture.asset(
   assetName,
   // semanticsLabel: 'Acme Logo'
 );
+
+const mainColor = Color(0xff00CA78);

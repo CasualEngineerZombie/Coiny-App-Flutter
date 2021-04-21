@@ -1,4 +1,7 @@
-import 'package:coiny/widgets/charts.dart';
+import 'package:coiny/screens/tab_view.dart';
+// import 'package:coiny/widgets/charts.dart';
+// import 'package:coiny/widgets/second_chart.dart';
+// import 'package:coiny/widgets/third_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/constants.dart';
 
@@ -10,6 +13,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+  final months = [
+    'Jan',
+    'Feb',
+    'March',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
+  ];
   @override
   void initState() {
     _tabController = TabController(length: 5, vsync: this);
@@ -24,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final _width = MediaQuery.of(context).size.width;
-    final _height = MediaQuery.of(context).size.height;
+    // final _width = MediaQuery.of(context).size.width;
+    // final _height = MediaQuery.of(context).size.height;
 
     return DefaultTabController(
       length: 4,
@@ -69,69 +86,9 @@ class _HomeScreenState extends State<HomeScreen>
         ),
         body: SafeArea(
           child: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
             children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(25.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "US\$3,457.50",
-                          style: TextStyle(fontSize: 38, fontFamily: 'SF'),
-                        ),
-                        Text(
-                          "8:00 AM Friday, Aug 11,2017",
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            // color: Colors.grey[300],
-                          ),
-                          child: TabBar(
-                            isScrollable: false,
-                            controller: _tabController,
-                            // labelColor: Colors.red,
-                            unselectedLabelColor: Colors.grey,
-                            indicatorSize: TabBarIndicatorSize.label,
-                            tabs: [
-                              TabContent(value: '1H'),
-                              TabContent(value: '1D'),
-                              TabContent(value: '1W'),
-                              TabContent(value: '1Y'),
-                              TabContent(value: 'ALL'),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      controller: _tabController,
-                      children: [
-                        ChartScreen(),
-                        ChartScreen(),
-                        ChartScreen(),
-                        ChartScreen(),
-                        ChartScreen(),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: _height * 0.2,
-                  ),
-                ],
-              ),
+              TabView(),
               Icon(Icons.directions_transit, size: 350),
               Icon(Icons.directions_car, size: 350),
               Icon(Icons.biotech_outlined, size: 350),
