@@ -1,4 +1,5 @@
 import 'package:coiny/constants.dart';
+import 'package:coiny/screens/dashboard.dart';
 import 'package:coiny/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -91,15 +92,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 10,
                       ),
                       CustomLoginButton(
-                          onTapValue: () => Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => HomeScreen(),
-                                ),
-                              ),
-                          color: mainColor,
-                          textValue: 'LOGIN',
-                          textColor: Colors.white)
+                        onTapValue: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => DashBoardScreen(),
+                          ),
+                        ),
+                        color: mainColor,
+                        textValue: 'LOGIN',
+                        textColor: Colors.white,
+                      )
                     ],
                   ),
                 ),

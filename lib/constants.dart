@@ -23,6 +23,26 @@ final Widget dashboardLogoMid = SvgPicture.asset(
   dashboardLogo,
 );
 
+final String bottomNavLogo1 = 'assets/Prices.svg';
+final Widget bottomNav1 = SvgPicture.asset(
+  bottomNavLogo1,
+);
+
+final String bottomNavLogo2 = 'assets/Accounts.svg';
+final Widget bottomNav2 = SvgPicture.asset(
+  bottomNavLogo2,
+);
+
+final String bottomNavLogo3 = 'assets/Alerts.svg';
+final Widget bottomNav3 = SvgPicture.asset(
+  bottomNavLogo3,
+);
+
+final String bottomNavLogo4 = 'assets/settings.svg';
+final Widget bottomNav4 = SvgPicture.asset(
+  bottomNavLogo4,
+);
+
 const mainColor = Color(0xff00CA78);
 const bottomBorderColor = Color(0xff707070);
 const btcTickerColor = Color(0xffFFB119);

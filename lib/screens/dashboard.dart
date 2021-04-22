@@ -75,7 +75,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       sparkLineData: data,
                       sparkLineFillColor: chartFillColor,
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     CryptoBoard(
                       height: _height,
                       width: _width,
@@ -93,6 +95,22 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: Row(
+        children: [
+          Expanded(
+            child: IconButton(icon: bottomNav1, onPressed: () {}),
+          ),
+          Expanded(
+            child: IconButton(icon: bottomNav2, onPressed: () {}),
+          ),
+          Expanded(
+            child: IconButton(icon: bottomNav3, onPressed: () {}),
+          ),
+          Expanded(
+            child: IconButton(icon: bottomNav4, onPressed: () {}),
+          ),
+        ],
       ),
     );
   }
