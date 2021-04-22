@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="111" height="117.45" viewBox="0 0 111 117.45">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00ca78"/>
+      <stop offset="1" stop-color="#00ff97" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Invest_Ic" data-name="Invest Ic" transform="translate(-132 -92.55)">
+    <g id="Group_23" data-name="Group 23">
+      <g id="Group_22" data-name="Group 22" transform="translate(7.403 8.986)">
+        <g id="invest" transform="translate(152 87.914)">
+          <path id="Path_27" data-name="Path 27" d="M83.037,61.262a13.255,13.255,0,0,1-10.2-5.2A17.108,17.108,0,0,0,61.5,49.928V30.758h3.813a7.635,7.635,0,0,0,7.626-7.626V19.319H69.13A7.635,7.635,0,0,0,61.5,26.945V11.439a7.634,7.634,0,0,1,7.625-7.626V0A11.451,11.451,0,0,0,57.691,11.439v4.067A7.635,7.635,0,0,0,50.065,7.88H46.252v3.813a7.635,7.635,0,0,0,7.626,7.626h3.813V38.384a7.635,7.635,0,0,0-7.626-7.626H46.252v3.813A7.635,7.635,0,0,0,53.878,42.2h3.813v7.731a17.108,17.108,0,0,0-11.332,6.137,13.255,13.255,0,0,1-10.2,5.2H31v3.813c1.55,0,55.649,0,57.195,0V61.262Z" transform="translate(-31)"/>
+        </g>
+        <path id="Path_28" data-name="Path 28" d="M76.891,18.224v9.49A17.814,17.814,0,0,0,59.1,9.92H50.2v8.9A17.814,17.814,0,0,0,67.994,36.611h8.9Z" transform="translate(104.183 73.644)" fill="#00ca78"/>
+      </g>
+    </g>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="55.5" cy="55.5" r="55.5" transform="translate(132 99)" opacity="0.1" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

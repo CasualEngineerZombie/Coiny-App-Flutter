@@ -1,6 +1,8 @@
+import 'package:coiny/widgets/sparkline_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:coiny/models/model.dart';
+
+// import '../constants.dart';
 
 class ChartScreen extends StatefulWidget {
   @override
@@ -8,14 +10,12 @@ class ChartScreen extends StatefulWidget {
 }
 
 class _ChartScreenState extends State<ChartScreen> {
-  
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Sparkline(
-        data: data,
-        lineColor: Colors.black,
-      ),
+    return SparkLineChart(
+      lineColor: Colors.black,
+      dataLine: data,
     );
   }
 }
+

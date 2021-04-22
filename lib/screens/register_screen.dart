@@ -1,5 +1,8 @@
 import 'package:coiny/constants.dart';
+import 'package:coiny/screens/signup_success.dart';
 import 'package:flutter/material.dart';
+
+import 'home_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -8,7 +11,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   bool rememberMe = false;
-  
+
   void _onRememberMeChanged(bool newValue) => setState(() {
         rememberMe = newValue;
 
@@ -18,108 +21,125 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
+    final _screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 60,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: Image(
-                  width: 141,
-                  height: 154,
-                  image: AssetImage(
-                    'assets/Login Ic.png',
+        child: Container(
+          height: _screenHeight,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 60,
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Image(
+                    width: 141,
+                    height: 154,
+                    image: AssetImage(
+                      'assets/Login Ic.png',
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    CustomTextField(
-                      hintText: 'First Name',
-                      prefixText: 'First Name',
-                      obscure: false,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    CustomTextField(
-                      hintText: 'Last Name',
-                      prefixText: 'Last Name',
-                      obscure: false,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    CustomTextField(
-                      hintText: 'you@example.com',
-                      prefixText: 'Email',
-                      obscure: false,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    CustomTextField(
-                      hintText: 'Minimum 8 Characters',
-                      prefixText: 'Password',
-                      obscure: false,
-                    ),
-                  ],
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Checkbox(
-                      value: rememberMe,
-                      onChanged: _onRememberMeChanged,
-                      activeColor: mainColor,
-                    ),
-                    Container(
-                      width: _width*0.7,
-                      child: Text(
-                        'I certify that I am 18 years of age or older, and I agree to the user agreement and privacy policy.',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: bottomBorderColor,
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  child: Column(
+                    children: [
+                      CustomTextField(
+                        hintText: 'First Name',
+                        prefixText: 'First Name',
+                        obscure: false,
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      CustomTextField(
+                        hintText: 'Last Name',
+                        prefixText: 'Last Name',
+                        obscure: false,
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      CustomTextField(
+                        hintText: 'you@example.com',
+                        prefixText: 'Email',
+                        obscure: false,
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      CustomTextField(
+                        hintText: 'Minimum 8 Characters',
+                        prefixText: 'Password',
+                        obscure: true,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Checkbox(
+                        value: rememberMe,
+                        onChanged: _onRememberMeChanged,
+                        activeColor: mainColor,
+                      ),
+                      Container(
+                        width: _width * 0.7,
+                        child: Text(
+                          'I certify that I am 18 years of age or older, and I agree to the user agreement and privacy policy.',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: bottomBorderColor,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    CustomLoginButton(
-                      color: Colors.white,
-                      textValue: 'CANCEL',
-                      textColor: Colors.black,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CustomLoginButton(
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CustomLoginButton(
+                        color: Colors.white,
+                        textValue: 'CANCEL',
+                        textColor: Colors.black,
+                        onTapValue: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => HomeScreen(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CustomLoginButton(
                         color: mainColor,
                         textValue: 'SIGNUP',
-                        textColor: Colors.white)
-                  ],
+                        textColor: Colors.white,
+                        onTapValue: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => SignupSuccessScreen(),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -128,11 +148,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
 }
 
 class CustomLoginButton extends StatelessWidget {
-  CustomLoginButton({this.color, this.textValue, this.textColor});
+  CustomLoginButton(
+      {this.color, this.textValue, this.textColor, this.onTapValue});
   final color;
   final textValue;
   final textColor;
-  
+  final onTapValue;
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -141,7 +163,7 @@ class CustomLoginButton extends StatelessWidget {
         shape: MaterialStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))),
       ),
-      onPressed: () {},
+      onPressed: onTapValue,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 17),
         child: Text(

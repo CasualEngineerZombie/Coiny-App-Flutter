@@ -10,91 +10,101 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    final _screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 150,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: Image(
-                  width: 141,
-                  height: 154,
-                  image: AssetImage(
-                    'assets/Login Ic.png',
+        child: Container(
+          height: _screenHeight,
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 150,
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Image(
+                    width: 141,
+                    height: 154,
+                    image: AssetImage(
+                      'assets/Login Ic.png',
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    CustomTextField(
-                      hintText: 'your@example.com',
-                      prefixText: 'Email',
-                      obscure: false,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    CustomTextField(
-                      hintText: '*******',
-                      prefixText: 'Password',
-                      obscure: true,
-                    ),
-                  ],
+                SizedBox(
+                  height: 40,
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Forgot password? Tap to reset',
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: bottomBorderColor,
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  child: Column(
+                    children: [
+                      CustomTextField(
+                        hintText: 'your@example.com',
+                        prefixText: 'Email',
+                        obscure: false,
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        height: 15,
+                      ),
+                      CustomTextField(
+                        hintText: '*******',
+                        prefixText: 'Password',
+                        obscure: true,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    CustomLoginButton(
-                      onTapValue: () => Navigator.pop(context),
-                      color: Colors.white,
-                      textValue: 'CANCEL',
-                      textColor: Colors.black,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CustomLoginButton(
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Forgot password? Tap to reset',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: bottomBorderColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CustomLoginButton(
                         onTapValue: () => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => HomeScreen(),
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => HomeScreen(),
+                          ),
+                        ),
+                        color: Colors.white,
+                        textValue: 'CANCEL',
+                        textColor: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      CustomLoginButton(
+                          onTapValue: () => Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => HomeScreen(),
+                                ),
                               ),
-                            ),
-                        color: mainColor,
-                        textValue: 'LOGIN',
-                        textColor: Colors.white)
-                  ],
+                          color: mainColor,
+                          textValue: 'LOGIN',
+                          textColor: Colors.white)
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -111,22 +121,19 @@ class CustomLoginButton extends StatelessWidget {
   final onTapValue;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTapValue,
-      child: TextButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(color),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0))),
-        ),
-        onPressed: () {},
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 17),
-          child: Text(
-            textValue,
-            style: TextStyle(
-              color: textColor,
-            ),
+    return TextButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(color),
+        shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))),
+      ),
+      onPressed: onTapValue,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 17),
+        child: Text(
+          textValue,
+          style: TextStyle(
+            color: textColor,
           ),
         ),
       ),

@@ -1,10 +1,14 @@
-import 'package:coiny/screens/login_screen.dart';
 import 'package:coiny/screens/register_screen.dart';
+import 'package:coiny/widgets/buttons.dart';
 import 'package:coiny/widgets/charts.dart';
 import 'package:coiny/widgets/second_chart.dart';
 import 'package:coiny/widgets/third_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/constants.dart';
+
+import '../constants.dart';
+import 'login_screen.dart';
+import 'register_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -143,6 +147,8 @@ class TabViewColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _width = MediaQuery.of(context).size.width;
+    final _height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         Padding(
@@ -196,10 +202,10 @@ class TabViewColumn extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             controller: tabController,
             children: [
-              firstGraph,
+              SecondChart(),
               SecondChart(),
               ThirdChart(),
-              ChartScreen(),
+              SecondChart(),
               SecondChart(),
             ],
           ),
@@ -207,79 +213,52 @@ class TabViewColumn extends StatelessWidget {
         Divider(
           height: 2,
         ),
-        Container(
-          height: height * 0.2,
-          child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Column(
-              children: [
-                GestureDetector(
-                  onTap: () => Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => RegisterScreen(),
-                    ),
-                  ),
-                  child: Container(
-                    // height: _height * 0.08,
-                    padding: EdgeInsets.all(20),
-                    width: width * 0.8,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: mainColor,
-                    ),
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: (Text(
-                        'Sign up',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )),
-                    ),
+        Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              HomeButton(
+                borderRadius: 50,
+                verticalPadding: 10,
+                height: _height*0.08,
+                width: _width * 0.93,
+                textValue: 'SIGNUP',
+                buttonColor: mainColor,
+                textColor: Colors.white,
+                onPressedValue: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => RegisterScreen(),
                   ),
                 ),
-                SizedBox(
-                  height: 3,
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => LoginScreen(),
-                    ),
-                  ),
-                  child: Container(
-                    // height: _height * 0.08,
-                    padding: EdgeInsets.all(20),
-                    width: width * 0.8,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      // color: mainColor,
-                    ),
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: (Text(
-                        'Login',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )),
-                    ),
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              HomeButton(
+                borderRadius: 50,
+                verticalPadding: 10,
+                height: _height*0.08,
+                width: _width * 0.93,
+                textValue: 'LOGIN',
+                buttonColor: Colors.white,
+                textColor: Colors.black,
+                onPressedValue: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => LoginScreen(),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ],
     );
   }
 }
+
+
 
 class TabContainer extends StatelessWidget {
   final value;
