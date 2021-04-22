@@ -23,7 +23,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           height: _height,
           child: Column(
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: 60),
               Align(
                 alignment: Alignment.center,
                 child: Container(
@@ -96,21 +96,32 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: Row(
-        children: [
-          Expanded(
-            child: IconButton(icon: bottomNav1, onPressed: () {}),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          // boxShadow: [BoxShadow(blurRadius: 1, color: bottomBorderColor)]
+          border: Border(
+            top: BorderSide(
+              color: Color(0xffd7d9dd),
+              width: 0.5,
+            ),
           ),
-          Expanded(
-            child: IconButton(icon: bottomNav2, onPressed: () {}),
-          ),
-          Expanded(
-            child: IconButton(icon: bottomNav3, onPressed: () {}),
-          ),
-          Expanded(
-            child: IconButton(icon: bottomNav4, onPressed: () {}),
-          ),
-        ],
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: IconButton(icon: bottomNav1, onPressed: () {}),
+            ),
+            Expanded(
+              child: IconButton(icon: bottomNav2, onPressed: () {}),
+            ),
+            Expanded(
+              child: IconButton(icon: bottomNav3, onPressed: () {}),
+            ),
+            Expanded(
+              child: IconButton(icon: bottomNav4, onPressed: () {}),
+            ),
+          ],
+        ),
       ),
     );
   }
