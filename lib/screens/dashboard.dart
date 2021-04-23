@@ -12,6 +12,8 @@ class DashBoardScreen extends StatefulWidget {
 }
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
+  int _selectedItemIndex = 3;
+  bool isActive = true;
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -108,20 +110,45 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         ),
         child: Row(
           children: [
-            Expanded(
-              child: IconButton(icon: bottomNav1, onPressed: () {}),
-            ),
-            Expanded(
-              child: IconButton(icon: bottomNav2, onPressed: () {}),
-            ),
-            Expanded(
-              child: IconButton(icon: bottomNav3, onPressed: () {}),
-            ),
-            Expanded(
-              child: IconButton(icon: bottomNav4, onPressed: () {}),
-            ),
+            buildExpanded(bottomNav1, true, 0),
+            buildExpanded(bottomNav2, true, 1),
+            buildExpanded(bottomNav3, true, 2),
+            buildExpanded(bottomNav4, true, 3),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget buildExpanded(Widget icon, bool isActive, int index) {
+    return Expanded(
+      child: Container(
+        decoration: _selectedItemIndex == index
+            ? BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    mainColor.withOpacity(0.1),
+                    mainColor.withOpacity(0.015),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter
+                ),
+                border: Border(
+                  top: BorderSide(
+                    color:
+                        _selectedItemIndex == index ? mainColor : Colors.white,
+                    width: 2,
+                  ),
+                ),
+              )
+            : BoxDecoration(),
+        child: IconButton(
+            icon: icon,
+            onPressed: () {
+              setState(() {
+                _selectedItemIndex = index;
+              });
+            }),
       ),
     );
   }
