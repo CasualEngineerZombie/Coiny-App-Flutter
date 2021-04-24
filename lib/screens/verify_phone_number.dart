@@ -8,6 +8,9 @@ class VerifyPhoneNumberScreen extends StatefulWidget {
 }
 
 class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
+  var _numberCodes = ['+1', '+69', '+24'];
+  var _currentNumberCode = '+1';
+
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -79,21 +82,84 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Container(
-                height: _height*0.08,
+                height: _height * 0.08,
                 decoration: BoxDecoration(
                   border: Border(
                     top: BorderSide(
-                      color: Colors.grey,
+                      color: borderColor.withOpacity(0.25),
                       width: 1,
                     ),
                     bottom: BorderSide(
-                      color: Colors.grey,
+                      color: borderColor.withOpacity(0.25),
                       width: 1,
                     ),
                   ),
                 ),
+                child: Row(
+                  children: [
+                    DropdownButtonHideUnderline(
+                      child: DropdownButton(
+                        elevation: 0,
+                        items: _numberCodes.map((String dropDownNumberCodes) {
+                          return DropdownMenuItem<String>(
+                            value: dropDownNumberCodes,
+                            child: Text(
+                              '$dropDownNumberCodes',
+                              style: TextStyle(
+                                fontFamily: 'SF',
+                                fontSize: 15,
+                                color: bottomBorderColor,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String newValueSelected) {
+                          setState(() {
+                            this._currentNumberCode = newValueSelected;
+                          });
+                        },
+                        value: _currentNumberCode,
+                      ),
+                    ),
+                    VerticalDivider(
+                      color: borderColor.withOpacity(0.25),
+                      thickness: 1,
+                      indent: 10,
+                      endIndent: 10,
+                    ),
+                    Container(
+                      width: _width * 0.62,
+                      height: _height * 0.1,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: TextField(
+                          style: TextStyle(
+                            fontFamily: 'SF',
+                            fontSize: 13,
+                            color: bottomBorderColor,
+                          ),
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              contentPadding: EdgeInsets.only(
+                                  left: 15, bottom: 11, top: 11, right: 15),
+                              hintText: "Your phone number"),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
               ),
             ],
           ),

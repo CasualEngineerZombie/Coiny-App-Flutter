@@ -65,5 +65,6 @@ const greenPrice = Color(0xff00CA78);
 const sparkLineColor2 = Color(0xffFFB119);
 const chartFillColor = Color(0xffDBF7EC);
 const chartFillColor2 = Color(0xffFFFAF4);
+const borderColor = Color(0xff707070);
 
 
