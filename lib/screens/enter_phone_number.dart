@@ -1,17 +1,16 @@
 import 'package:coiny/constants.dart';
-import 'package:coiny/screens/enter_phone_number.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/widgets/buttons.dart';
 
 import 'login_screen.dart';
 
-class VerifyPhoneNumberScreen extends StatefulWidget {
+class EnterPhoneNumberScreen extends StatefulWidget {
   @override
-  _VerifyPhoneNumberScreenState createState() =>
-      _VerifyPhoneNumberScreenState();
+  _EnterPhoneNumberScreenState createState() =>
+      _EnterPhoneNumberScreenState();
 }
 
-class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
+class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
   var _numberCodes = ['+1', '+69', '+24'];
   var _currentNumberCode = '+1';
 
@@ -107,64 +106,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
                       ),
                     ),
                   ),
-                  child: Row(
-                    children: [
-                      DropdownButtonHideUnderline(
-                        child: DropdownButton(
-                          elevation: 0,
-                          items: _numberCodes.map((String dropDownNumberCodes) {
-                            return DropdownMenuItem<String>(
-                              value: dropDownNumberCodes,
-                              child: Text(
-                                '$dropDownNumberCodes',
-                                style: TextStyle(
-                                  fontFamily: 'SF',
-                                  fontSize: 15,
-                                  color: bottomBorderColor,
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                          onChanged: (String newValueSelected) {
-                            setState(() {
-                              this._currentNumberCode = newValueSelected;
-                            });
-                          },
-                          value: _currentNumberCode,
-                        ),
-                      ),
-                      VerticalDivider(
-                        color: borderColor.withOpacity(0.25),
-                        thickness: 1,
-                        indent: 10,
-                        endIndent: 10,
-                      ),
-                      Container(
-                        width: _width * 0.62,
-                        height: _height * 0.1,
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: TextField(
-                            style: TextStyle(
-                              fontFamily: 'SF',
-                              fontSize: 13,
-                              color: bottomBorderColor,
-                            ),
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                contentPadding: EdgeInsets.only(
-                                    left: 15, bottom: 11, top: 11, right: 15),
-                                hintText: "Your phone number"),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
+                  
                 ),
                 SizedBox(
                   height: 40,
@@ -180,7 +122,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
                   onPressedValue: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => EnterPhoneNumberScreen(),
+                      builder: (_) => LoginScreen(),
                     ),
                   ),
                 ),
