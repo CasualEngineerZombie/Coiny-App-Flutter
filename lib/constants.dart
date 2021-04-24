@@ -43,6 +43,21 @@ final Widget bottomNav4 = SvgPicture.asset(
   bottomNavLogo4,
 );
 
+final String customBackButtonLogo = 'assets/Cancel.svg';
+final Widget customBackButton = SvgPicture.asset(
+  customBackButtonLogo,
+);
+
+final String verifyPhoneLogo = 'assets/Verify Phone.svg';
+final Widget verifyPhone = SvgPicture.asset(
+  verifyPhoneLogo,
+);
+
+final String forwardIconLogo = 'assets/Forward Icon.svg';
+final Widget forwardIcon = SvgPicture.asset(
+  forwardIconLogo,
+);
+
 const mainColor = Color(0xff00CA78);
 const bottomBorderColor = Color(0xff707070);
 const btcTickerColor = Color(0xffFFB119);

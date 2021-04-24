@@ -1,10 +1,10 @@
+import 'package:coiny/screens/verify_phone_number.dart';
 import 'package:coiny/widgets/buttons.dart';
 import 'package:coiny/widgets/crypto_board.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../models/model.dart';
-import 'home_screen.dart';
 
 class DashBoardScreen extends StatefulWidget {
   @override
@@ -55,10 +55,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 textValue: 'Complete account setup',
                 buttonColor: mainColor,
                 textColor: Colors.white,
-                onPressedValue: () => Navigator.pushReplacement(
+                onPressedValue: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => HomeScreen(),
+                    builder: (_) => VerifyPhoneNumberScreen(),
                   ),
                 ),
               ),
@@ -100,7 +100,6 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          // boxShadow: [BoxShadow(blurRadius: 1, color: bottomBorderColor)]
           border: Border(
             top: BorderSide(
               color: Color(0xffd7d9dd),
