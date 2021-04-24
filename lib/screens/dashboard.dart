@@ -1,4 +1,4 @@
-import 'package:coiny/screens/verify_phone_number.dart';
+import 'package:coiny/screens/phone_confirmation.dart';
 import 'package:coiny/widgets/buttons.dart';
 import 'package:coiny/widgets/crypto_board.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +58,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 onPressedValue: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => VerifyPhoneNumberScreen(),
+                    builder: (_) => PhoneConfirmationScreen(),
                   ),
                 ),
               ),

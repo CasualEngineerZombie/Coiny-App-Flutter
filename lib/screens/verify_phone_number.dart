@@ -1,7 +1,8 @@
 import 'package:coiny/constants.dart';
-import 'package:coiny/screens/sample.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/widgets/buttons.dart';
+
+import 'login_screen.dart';
 
 class VerifyPhoneNumberScreen extends StatefulWidget {
   @override
@@ -38,7 +39,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: ClampingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Container(
             height: _height,
             margin: EdgeInsets.symmetric(horizontal: 20),
@@ -178,7 +179,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
                   onPressedValue: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => SamplePage(),
+                      builder: (_) => LoginScreen(),
                     ),
                   ),
                 ),

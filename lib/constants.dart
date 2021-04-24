@@ -58,6 +58,16 @@ final Widget forwardIcon = SvgPicture.asset(
   forwardIconLogo,
 );
 
+final String phoneConfirmationLogo = 'assets/Growth Ic.svg';
+final Widget phoneConfirmation = SvgPicture.asset(
+  phoneConfirmationLogo,
+);
+
+final String checkMarkLogo = 'assets/check.svg';
+final Widget checkMark = SvgPicture.asset(
+  checkMarkLogo,
+);
+
 const mainColor = Color(0xff00CA78);
 const bottomBorderColor = Color(0xff707070);
 const btcTickerColor = Color(0xffFFB119);
