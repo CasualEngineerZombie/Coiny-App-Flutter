@@ -89,7 +89,7 @@ class HomeButton extends StatelessWidget {
     this.buttonColor,
     this.width,
     this.textColor,
-    this.onPressedValue,
+    this.onPressedValue, int borderRadius,
   });
 
   final textValue;
