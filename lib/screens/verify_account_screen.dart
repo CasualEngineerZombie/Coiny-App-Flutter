@@ -12,7 +12,6 @@ class VerifyAccountScreen extends StatefulWidget {
 class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
   @override
   Widget build(BuildContext context) {
-    final _listViewHeight = 150;
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -57,32 +56,34 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                 SizedBox(
                   height: 40,
                 ),
-                Expanded(
-                  child: Container(
-                      child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Column(
-                        children: [
-                          ListViewItem(
-                            height: _height,
-                            width: _width,
-                            image: identityCard,
-                            colored: true,
-                          ),
-                          Text(
-                            'Identity Card',
-                            style: TextStyle(
-                              fontFamily: 'SF',
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )),
-                ),
+                Container(
+                  height: _height*0.25,
+                    child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    ListViewColumn(
+                      height: _height,
+                      width: _width,
+                      image: identityCard,
+                      text: 'Identity Card',
+                      colored: true,
+                    ),
+                    ListViewColumn(
+                      height: _height,
+                      width: _width,
+                      image: driversLicense,
+                      text: 'Driver\'s License',
+                      colored: false,
+                    ),
+                    ListViewColumn(
+                      height: _height,
+                      width: _width,
+                      image: passport,
+                      text: 'Passport',
+                      colored: false,
+                    ),
+                  ],
+                )),
                 SizedBox(
                   height: 60,
                 ),
@@ -113,6 +114,44 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
   }
 }
 
+class ListViewColumn extends StatelessWidget {
+  ListViewColumn({
+    @required this.height,
+    @required this.width,
+    @required this.image,
+    @required this.text,
+    @required this.colored,
+  });
+
+  final double height;
+  final double width;
+  final image;
+  final text;
+  final bool colored;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ListViewItem(
+          height: height,
+          width: width,
+          image: image,
+          colored: colored,
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            fontFamily: 'SF',
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class ListViewItem extends StatelessWidget {
   ListViewItem({
     @required this.height,
@@ -133,7 +172,7 @@ class ListViewItem extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(10),
         height: 150,
-        width: 120,
+        width: 130,
         decoration: BoxDecoration(
           color: colored == true ? boxColor.withOpacity(0.1) : null,
           borderRadius: BorderRadius.circular(20),
