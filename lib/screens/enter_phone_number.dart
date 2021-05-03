@@ -95,7 +95,7 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
                   verticalPadding: 10,
                   height: _height * 0.08,
                   width: _width,
-                  textValue: 'Complete account setup',
+                  textValue: 'Confirm',
                   buttonColor: mainColor,
                   textColor: Colors.white,
                   onPressedValue: () => Navigator.push(

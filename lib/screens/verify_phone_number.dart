@@ -173,7 +173,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
                   verticalPadding: 10,
                   height: _height * 0.08,
                   width: _width,
-                  textValue: 'Complete account setup',
+                  textValue: 'Next',
                   buttonColor: mainColor,
                   textColor: Colors.white,
                   onPressedValue: () => Navigator.push(
