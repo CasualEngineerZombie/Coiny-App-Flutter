@@ -1,16 +1,16 @@
 import 'package:coiny/constants.dart';
-import 'package:coiny/screens/verify_account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/widgets/buttons.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 
+import 'login_screen.dart';
 
-class EnterPhoneNumberScreen extends StatefulWidget {
+class VerifyAccountScreen extends StatefulWidget {
   @override
-  _EnterPhoneNumberScreenState createState() => _EnterPhoneNumberScreenState();
+  _VerifyAccountScreenState createState() => _VerifyAccountScreenState();
 }
 
-class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
+class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -101,7 +101,7 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
                   onPressedValue: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => VerifyAccountScreen(),
+                      builder: (_) => LoginScreen(),
                     ),
                   ),
                 ),
