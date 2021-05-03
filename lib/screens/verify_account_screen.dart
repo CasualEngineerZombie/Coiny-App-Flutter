@@ -57,31 +57,32 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                 SizedBox(
                   height: 40,
                 ),
-                Container(
-                    height: 150,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        ListViewItem(
-                          height: _height,
-                          width: _width,
-                          image: identityCard,
-                          colored: true,
-                        ),
-                        ListViewItem(
-                          height: _height,
-                          width: _width,
-                          image: driversLicense,
-                          colored: false,
-                        ),
-                        ListViewItem(
-                          height: _height,
-                          width: _width,
-                          image: passport,
-                          colored: false,
-                        ),
-                      ],
-                    )),
+                Expanded(
+                  child: Container(
+                      child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Column(
+                        children: [
+                          ListViewItem(
+                            height: _height,
+                            width: _width,
+                            image: identityCard,
+                            colored: true,
+                          ),
+                          Text(
+                            'Identity Card',
+                            style: TextStyle(
+                              fontFamily: 'SF',
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )),
+                ),
                 SizedBox(
                   height: 60,
                 ),
@@ -134,11 +135,11 @@ class ListViewItem extends StatelessWidget {
         height: 150,
         width: 120,
         decoration: BoxDecoration(
-          color: colored==true?boxColor.withOpacity(0.1):null,
+          color: colored == true ? boxColor.withOpacity(0.1) : null,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             width: 2,
-            color: colored==true?mainColor:borderColor.withOpacity(0.5),
+            color: colored == true ? mainColor : borderColor.withOpacity(0.5),
           ),
         ),
         child: Container(
