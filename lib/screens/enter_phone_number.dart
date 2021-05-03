@@ -77,6 +77,7 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
                   borderColor: borderColor,
                   activeBorderColor: mainColor,
                   borderWidth: 1.0,
+                  animation: Animations.SlideInUp,
                   textStyle: TextStyle(
                     fontSize: 53,
                     fontFamily: 'SF',
