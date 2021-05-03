@@ -22,7 +22,7 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
         automaticallyImplyLeading: true,
         elevation: 0,
         title: Text(
-          'Add Phone Number',
+          'Verify Account',
           style: TextStyle(
             fontFamily: 'SF',
             fontSize: 16,
@@ -42,14 +42,7 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
             margin: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                SizedBox(height: 40),
-                Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    child: verifyPhone,
-                  ),
-                ),
-                SizedBox(height: 40),
+                SizedBox(height: 80),
                 Container(
                   width: _width * 0.9,
                   child: Column(
@@ -57,13 +50,8 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Enter verification\ncode',
+                        'Choose your\ndocument type',
                         style: TextStyle(fontSize: 24, fontFamily: 'SF'),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Please enter the verification code we sent\nto your phone number',
-                        style: TextStyle(fontSize: 14, fontFamily: 'SF'),
                       ),
                     ],
                   ),
@@ -71,21 +59,11 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                 SizedBox(
                   height: 40,
                 ),
-                PinCodeFields(
-                  length: 4,
-                  keyboardType: TextInputType.number,
-                  borderColor: borderColor,
-                  activeBorderColor: mainColor,
-                  borderWidth: 1.0,
-                  animation: Animations.SlideInUp,
-                  textStyle: TextStyle(
-                    fontSize: 53,
-                    fontFamily: 'SF',
-                  ),
-                  onComplete: (output) {
-                    // Your logic with pin code
-                    print(output);
+                PageView.builder(
+                  itemBuilder: (context, position) {
+                    return Container();
                   },
+                  itemCount: 3, // Can be null
                 ),
                 SizedBox(
                   height: 60,
