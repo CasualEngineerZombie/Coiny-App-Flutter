@@ -62,18 +62,13 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                   height: _height * 0.20,
                   child: PageView.builder(
                     itemBuilder: (context, position) {
-                      return SizedBox(
-                        width: 20,
+                      return Expanded(
                         child: Container(
                           decoration: BoxDecoration(
                             color: boxColor.withOpacity(0.1),
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border(
-                                top: BorderSide(
-                                  width: 2,
-                                  color: mainColor,
-                                ),
-                              )),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: boxColor, width: 1),
+                          ),
                         ),
                       );
                     },
