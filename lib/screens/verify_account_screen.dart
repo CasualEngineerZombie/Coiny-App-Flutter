@@ -1,8 +1,5 @@
 import 'package:coiny/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:coiny/widgets/buttons.dart';
-
-import 'login_screen.dart';
 
 class VerifyAccountScreen extends StatefulWidget {
   @override
