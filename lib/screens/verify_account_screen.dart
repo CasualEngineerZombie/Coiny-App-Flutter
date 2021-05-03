@@ -57,52 +57,32 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                   height: 40,
                 ),
                 Container(
-                  height: _height*0.25,
-                    child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    ListViewColumn(
-                      height: _height,
-                      width: _width,
-                      image: identityCard,
-                      text: 'Identity Card',
-                      colored: true,
-                    ),
-                    ListViewColumn(
-                      height: _height,
-                      width: _width,
-                      image: driversLicense,
-                      text: 'Driver\'s License',
-                      colored: false,
-                    ),
-                    ListViewColumn(
-                      height: _height,
-                      width: _width,
-                      image: passport,
-                      text: 'Passport',
-                      colored: false,
-                    ),
-                  ],
-                )),
-                SizedBox(
-                  height: 60,
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: HomeButton(
-                    borderRadius: 20,
-                    verticalPadding: 10,
-                    height: _height * 0.08,
-                    width: _width,
-                    textValue: 'Complete account setup',
-                    buttonColor: mainColor,
-                    textColor: Colors.white,
-                    onPressedValue: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => LoginScreen(),
+                  height: _height * 0.25,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      ListViewColumn(
+                        height: _height,
+                        width: _width,
+                        image: identityCard,
+                        text: 'Identity Card',
+                        colored: true,
                       ),
-                    ),
+                      ListViewColumn(
+                        height: _height,
+                        width: _width,
+                        image: driversLicense,
+                        text: 'Driver\'s License',
+                        colored: false,
+                      ),
+                      ListViewColumn(
+                        height: _height,
+                        width: _width,
+                        image: passport,
+                        text: 'Passport',
+                        colored: false,
+                      ),
+                    ],
                   ),
                 ),
               ],
