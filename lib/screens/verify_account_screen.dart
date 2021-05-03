@@ -30,60 +30,57 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
         ),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          physics: ClampingScrollPhysics(),
-          child: Container(
-            height: _height,
-            child: Column(
-              children: [
-                SizedBox(height: 80),
-                Container(
-                  width: _width * 0.9,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Choose your\ndocument type',
-                        style: TextStyle(fontSize: 24, fontFamily: 'SF'),
-                      ),
-                    ],
-                  ),
+        child: Container(
+          height: _height,
+          child: Column(
+            children: [
+              SizedBox(height: 80),
+              Container(
+                width: _width * 0.9,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Choose your\ndocument type',
+                      style: TextStyle(fontSize: 24, fontFamily: 'SF'),
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 40,
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Container(
+                height: _height * 0.25,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    ListViewColumn(
+                      height: _height,
+                      width: _width,
+                      image: identityCard,
+                      text: 'Identity Card',
+                      colored: true,
+                    ),
+                    ListViewColumn(
+                      height: _height,
+                      width: _width,
+                      image: driversLicense,
+                      text: 'Driver\'s License',
+                      colored: false,
+                    ),
+                    ListViewColumn(
+                      height: _height,
+                      width: _width,
+                      image: passport,
+                      text: 'Passport',
+                      colored: false,
+                    ),
+                  ],
                 ),
-                Container(
-                  height: _height * 0.25,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      ListViewColumn(
-                        height: _height,
-                        width: _width,
-                        image: identityCard,
-                        text: 'Identity Card',
-                        colored: true,
-                      ),
-                      ListViewColumn(
-                        height: _height,
-                        width: _width,
-                        image: driversLicense,
-                        text: 'Driver\'s License',
-                        colored: false,
-                      ),
-                      ListViewColumn(
-                        height: _height,
-                        width: _width,
-                        image: passport,
-                        text: 'Passport',
-                        colored: false,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
