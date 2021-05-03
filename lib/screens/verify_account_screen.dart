@@ -12,10 +12,10 @@ class VerifyAccountScreen extends StatefulWidget {
 class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
   @override
   Widget build(BuildContext context) {
+    final _listViewHeight = 150;
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -38,7 +38,6 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
           physics: ClampingScrollPhysics(),
           child: Container(
             height: _height,
-            margin: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 SizedBox(height: 80),
@@ -58,44 +57,95 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                 SizedBox(
                   height: 40,
                 ),
-                SizedBox(
-                  height: _height * 0.20,
-                  child: PageView.builder(
-                    itemBuilder: (context, position) {
-                      return Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: boxColor.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: boxColor, width: 1),
-                          ),
+                Container(
+                    height: 150,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        ListViewItem(
+                          height: _height,
+                          width: _width,
+                          image: identityCard,
+                          colored: true,
                         ),
-                      );
-                    },
-                    itemCount: 3, // Can be null
-                  ),
-                ),
+                        ListViewItem(
+                          height: _height,
+                          width: _width,
+                          image: identityCard,
+                          colored: false,
+                        ),
+                        ListViewItem(
+                          height: _height,
+                          width: _width,
+                          image: identityCard,
+                          colored: false,
+                        ),
+                      ],
+                    )),
                 SizedBox(
                   height: 60,
                 ),
-                HomeButton(
-                  borderRadius: 20,
-                  verticalPadding: 10,
-                  height: _height * 0.08,
-                  width: _width,
-                  textValue: 'Complete account setup',
-                  buttonColor: mainColor,
-                  textColor: Colors.white,
-                  onPressedValue: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => LoginScreen(),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  child: HomeButton(
+                    borderRadius: 20,
+                    verticalPadding: 10,
+                    height: _height * 0.08,
+                    width: _width,
+                    textValue: 'Complete account setup',
+                    buttonColor: mainColor,
+                    textColor: Colors.white,
+                    onPressedValue: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => LoginScreen(),
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ListViewItem extends StatelessWidget {
+  ListViewItem({
+    @required this.height,
+    @required this.width,
+    @required this.image,
+    @required this.colored,
+  });
+
+  final double height;
+  final double width;
+  final image;
+  final bool colored;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        margin: EdgeInsets.all(10),
+        height: 150,
+        width: 120,
+        decoration: BoxDecoration(
+          color: colored==true?boxColor.withOpacity(0.1):null,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            width: 2,
+            color: colored==true?mainColor:borderColor.withOpacity(0.5),
+          ),
+        ),
+        child: Container(
+          padding: EdgeInsets.all(20),
+          height: height * 0.2,
+          width: width * 0.2,
+          child: image,
         ),
       ),
     );

@@ -68,6 +68,21 @@ final Widget checkMark = SvgPicture.asset(
   checkMarkLogo,
 );
 
+final String identityCardLogo = 'assets/Identity Card.svg';
+final Widget identityCard = SvgPicture.asset(
+  identityCardLogo,
+);
+
+final String driversLicenseLogo = 'assets/Drivers Licencse.svg';
+final Widget driversLicense = SvgPicture.asset(
+  driversLicenseLogo,
+);
+
+final String passportLogo = 'assets/Rectangle 25.svg';
+final Widget passport = SvgPicture.asset(
+  passportLogo,
+);
+
 const mainColor = Color(0xff00CA78);
 const bottomBorderColor = Color(0xff707070);
 const btcTickerColor = Color(0xffFFB119);
