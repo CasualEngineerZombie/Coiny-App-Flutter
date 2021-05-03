@@ -58,37 +58,19 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Verify your phone\nnumber',
+                        'Enter verification\ncode',
                         style: TextStyle(fontSize: 24, fontFamily: 'SF'),
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Increase account security by verifying a\nphone number',
+                        'Please enter the verification code we sent\nto your phone number',
                         style: TextStyle(fontSize: 14, fontFamily: 'SF'),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 40),
-                Container(
-                  width: _width * 0.9,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'UNITED STATES',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'SF',
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      forwardIcon
-                    ],
-                  ),
-                ),
                 SizedBox(
-                  height: 10,
+                  height: 40,
                 ),
                 Container(
                   height: _height * 0.08,
