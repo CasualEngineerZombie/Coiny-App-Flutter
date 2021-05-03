@@ -1,7 +1,6 @@
 import 'package:coiny/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/widgets/buttons.dart';
-import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 
 import 'login_screen.dart';
 
