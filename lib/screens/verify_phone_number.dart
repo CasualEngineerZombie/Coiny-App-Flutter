@@ -3,7 +3,6 @@ import 'package:coiny/screens/enter_phone_number.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/widgets/buttons.dart';
 
-import 'login_screen.dart';
 
 class VerifyPhoneNumberScreen extends StatefulWidget {
   @override
