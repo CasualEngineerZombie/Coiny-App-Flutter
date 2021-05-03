@@ -31,6 +31,7 @@ class _ScanPictureScreenState extends State<ScanPictureScreen> {
       ),
       body: SafeArea(
         child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
           height: _height,
           child: Column(
             children: [
@@ -52,32 +53,11 @@ class _ScanPictureScreenState extends State<ScanPictureScreen> {
                 height: 40,
               ),
               Container(
-                height: _height * 0.25,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    ListViewColumn(
-                      height: _height,
-                      width: _width,
-                      image: identityCard,
-                      text: 'Identity Card',
-                      colored: true,
-                    ),
-                    ListViewColumn(
-                      height: _height,
-                      width: _width,
-                      image: driversLicense,
-                      text: 'Driver\'s License',
-                      colored: false,
-                    ),
-                    ListViewColumn(
-                      height: _height,
-                      width: _width,
-                      image: passport,
-                      text: 'Passport',
-                      colored: false,
-                    ),
-                  ],
+                width: double.infinity,
+                height: _height * 0.4,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.red
                 ),
               ),
             ],
