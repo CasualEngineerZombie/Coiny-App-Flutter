@@ -39,7 +39,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: ClampingScrollPhysics(),
           child: Container(
             height: _height,
             margin: EdgeInsets.symmetric(horizontal: 20),

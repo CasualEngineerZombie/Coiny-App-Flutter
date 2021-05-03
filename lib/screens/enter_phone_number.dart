@@ -36,7 +36,7 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: ClampingScrollPhysics(),
           child: Container(
             height: _height,
             margin: EdgeInsets.symmetric(horizontal: 20),
@@ -77,13 +77,17 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
                   borderColor: borderColor,
                   activeBorderColor: mainColor,
                   borderWidth: 1.0,
+                  textStyle: TextStyle(
+                    fontSize: 53,
+                    fontFamily: 'SF',
+                  ),
                   onComplete: (output) {
                     // Your logic with pin code
                     print(output);
                   },
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 60,
                 ),
                 HomeButton(
                   borderRadius: 20,
