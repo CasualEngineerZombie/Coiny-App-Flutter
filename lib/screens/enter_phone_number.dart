@@ -73,6 +73,10 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
                 ),
                 PinCodeFields(
                   length: 4,
+                  keyboardType: TextInputType.number,
+                  borderColor: borderColor,
+                  activeBorderColor: mainColor,
+                  borderWidth: 1.0,
                   onComplete: (output) {
                     // Your logic with pin code
                     print(output);
