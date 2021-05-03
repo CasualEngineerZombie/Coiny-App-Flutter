@@ -11,8 +11,6 @@ class EnterPhoneNumberScreen extends StatefulWidget {
 }
 
 class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
-  var _numberCodes = ['+1', '+69', '+24'];
-  var _currentNumberCode = '+1';
 
   @override
   Widget build(BuildContext context) {
