@@ -1,17 +1,16 @@
 import 'package:coiny/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:coiny/widgets/buttons.dart';
+import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 
 import 'login_screen.dart';
 
 class EnterPhoneNumberScreen extends StatefulWidget {
   @override
-  _EnterPhoneNumberScreenState createState() =>
-      _EnterPhoneNumberScreenState();
+  _EnterPhoneNumberScreenState createState() => _EnterPhoneNumberScreenState();
 }
 
 class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
-
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -72,21 +71,12 @@ class _EnterPhoneNumberScreenState extends State<EnterPhoneNumberScreen> {
                 SizedBox(
                   height: 40,
                 ),
-                Container(
-                  height: _height * 0.08,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      top: BorderSide(
-                        color: borderColor.withOpacity(0.25),
-                        width: 1,
-                      ),
-                      bottom: BorderSide(
-                        color: borderColor.withOpacity(0.25),
-                        width: 1,
-                      ),
-                    ),
-                  ),
-                  
+                PinCodeFields(
+                  length: 4,
+                  onComplete: (output) {
+                    // Your logic with pin code
+                    print(output);
+                  },
                 ),
                 SizedBox(
                   height: 40,
