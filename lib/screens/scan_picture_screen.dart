@@ -1,13 +1,12 @@
 import 'package:coiny/constants.dart';
-import 'package:coiny/screens/scan_picture_screen.dart';
 import 'package:flutter/material.dart';
 
-class VerifyAccountScreen extends StatefulWidget {
+class ScanPictureScreen extends StatefulWidget {
   @override
-  _VerifyAccountScreenState createState() => _VerifyAccountScreenState();
+  _ScanPictureScreenState createState() => _ScanPictureScreenState();
 }
 
-class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
+class _ScanPictureScreenState extends State<ScanPictureScreen> {
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -39,11 +38,11 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
               Container(
                 width: _width * 0.9,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Choose your\ndocument type',
+                      'Scan the font',
                       style: TextStyle(fontSize: 24, fontFamily: 'SF'),
                     ),
                   ],
@@ -143,12 +142,7 @@ class ListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) => ScanPictureScreen(),
-        ),
-      ),
+      onTap: () {},
       child: Container(
         margin: EdgeInsets.all(10),
         height: 150,
