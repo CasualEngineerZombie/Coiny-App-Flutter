@@ -71,13 +71,13 @@ class _VerifyAccountScreenState extends State<VerifyAccountScreen> {
                         ListViewItem(
                           height: _height,
                           width: _width,
-                          image: identityCard,
+                          image: driversLicense,
                           colored: false,
                         ),
                         ListViewItem(
                           height: _height,
                           width: _width,
-                          image: identityCard,
+                          image: passport,
                           colored: false,
                         ),
                       ],

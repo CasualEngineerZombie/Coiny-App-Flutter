@@ -78,7 +78,7 @@ final Widget driversLicense = SvgPicture.asset(
   driversLicenseLogo,
 );
 
-final String passportLogo = 'assets/Rectangle 25.svg';
+final String passportLogo = 'assets/Group 3297.svg';
 final Widget passport = SvgPicture.asset(
   passportLogo,
 );
