@@ -72,8 +72,14 @@ class _DetailScreenState extends State<DetailScreen> {
               SizedBox(
                 height: 20,
               ),
+              VerticalDivider(
+                color: borderColor.withOpacity(0.25),
+                thickness: 1,
+                indent: 10,
+                endIndent: 10,
+              ),
               CryptoBoardDetail(
-                height: _height*0.5,
+                height: _height * 0.5,
                 width: _width,
                 cryptoName: 'Lite Coin',
                 cryptoPrice: '\$344.53',
