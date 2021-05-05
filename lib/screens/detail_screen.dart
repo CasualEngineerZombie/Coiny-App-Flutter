@@ -122,21 +122,37 @@ class _DetailScreenState extends State<DetailScreen> {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child:  HomeButton(
-                borderRadius: 20,
-                verticalPadding: 10,
-                height: _height * 0.08,
-                width: _width,
-                textValue: 'Take Photo',
-                buttonColor: mainColor,
-                textColor: Colors.white,
-                onPressedValue: (){},
-              ),
-                  )
-                ],
+              Padding(
+                padding: EdgeInsets.only(top: 4, bottom: 2, left: 5, right: 5),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: HomeButton(
+                        borderRadius: 20,
+                        verticalPadding: 10,
+                        height: _height * 0.08,
+                        width: _width,
+                        textValue: 'Buy',
+                        buttonColor: Colors.black,
+                        textColor: Colors.white,
+                        onPressedValue: () {},
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    Expanded(
+                      child: HomeButton(
+                        borderRadius: 20,
+                        verticalPadding: 10,
+                        height: _height * 0.08,
+                        width: _width,
+                        textValue: 'Sell',
+                        buttonColor: mainColor,
+                        textColor: Colors.white,
+                        onPressedValue: () {},
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
