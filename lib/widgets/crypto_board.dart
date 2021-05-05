@@ -157,7 +157,6 @@ class CryptoBoardDetail extends StatelessWidget {
   CryptoBoardDetail({
     @required this.height,
     @required this.width,
-    @required this.borderAppearance,
     this.cryptoName,
     this.cryptoPrice,
     this.cryptoPriceIncrease,
@@ -178,7 +177,6 @@ class CryptoBoardDetail extends StatelessWidget {
   final cryptoPrice;
   final cryptoPriceIncrease;
   final borderColor;
-  final bool borderAppearance;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -186,12 +184,16 @@ class CryptoBoardDetail extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        border: borderAppearance == true
-            ? Border.all(
-                color: borderColor,
-                width: 2,
-              )
-            : null,
+        border: Border(
+          top: BorderSide(
+            color: borderColor,
+            width: 2,
+          ),
+          bottom: BorderSide(
+            color: borderColor,
+            width: 2,
+          ),
+        ),
       ),
       child: Container(
         child: Column(
