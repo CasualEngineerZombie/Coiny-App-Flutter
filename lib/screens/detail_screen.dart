@@ -83,7 +83,31 @@ class _DetailScreenState extends State<DetailScreen> {
                 sparkLineData: data,
                 sparkLineFillColor: sparkLineColor2.withOpacity(0.1),
               ),
-              
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  children: [
+                    MonthButton(textValue: 'Apr', color: Colors.black),
+                    MonthButton(textValue: 'Jun', color: Colors.black),
+                    MonthButton(textValue: 'Aug', color: Colors.black),
+                    MonthButton(textValue: 'Oct', color: Colors.black),
+                    MonthButton(textValue: 'Dec', color: Colors.black),
+                    MonthButton(textValue: 'Feb', color: Colors.black),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  children: [
+                    MonthButton(textValue: '1H', color: borderColor.withOpacity(0.5),),
+                    MonthButton(textValue: '1D', color: borderColor.withOpacity(0.5),),
+                    MonthButton(textValue: '1M', color: borderColor.withOpacity(0.5),),
+                    MonthButton(textValue: '1Y', color: borderColor.withOpacity(0.5),),
+                    MonthButton(textValue: 'ALL', color: borderColor.withOpacity(0.5)),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -134,6 +158,29 @@ class _DetailScreenState extends State<DetailScreen> {
               //   _selectedItemIndex = index;
               // });
             }),
+      ),
+    );
+  }
+}
+
+class MonthButton extends StatelessWidget {
+  MonthButton({this.textValue, this.color});
+
+  final textValue;
+  final color;
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: TextButton(
+        child: Text(
+          textValue,
+          style: TextStyle(
+            fontFamily: 'SF',
+            fontSize: 13,
+            color: color,
+          ),
+        ),
+        onPressed: () {},
       ),
     );
   }
