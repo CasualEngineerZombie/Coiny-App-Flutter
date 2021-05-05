@@ -160,12 +160,9 @@ class _DetailScreenState extends State<DetailScreen> {
                 margin: EdgeInsets.all(8),
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    width: 2,
-                    color: borderColor.withOpacity(0.1)
-                  )
-                ),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        width: 2, color: borderColor.withOpacity(0.1))),
                 child: TextButton(
                   onPressed: () {},
                   child: Row(
@@ -173,12 +170,39 @@ class _DetailScreenState extends State<DetailScreen> {
                       Row(
                         children: [
                           bitcoin,
+                          SizedBox(
+                            width: 5,
+                          ),
                           Text(
                             'BTC Wallet',
-                            style: TextStyle(fontFamily: 'SF', fontSize: 14),
-                          )
+                            style: TextStyle(
+                                fontFamily: 'SF',
+                                fontSize: 14,
+                                color: Colors.black),
+                          ),
                         ],
-                      )
+                      ),
+                      SizedBox(width: 10,),
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                'US\$0.00',
+                                style: TextStyle(
+                                  fontFamily: 'SF',
+                                  fontSize: 18,
+                                  color: borderColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          
+                        ],
+                      ),
                     ],
                   ),
                 ),
