@@ -182,16 +182,24 @@ class CryptoBoardDetail extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        border: Border(
-          top: BorderSide(width: 16.0, color: Colors.lightBlue.shade600),
-          bottom: BorderSide(width: 16.0, color: Colors.lightBlue.shade900),
-        ),
       ),
       child: Container(
         child: Column(
           children: [
             Expanded(
               child: Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    top: BorderSide(
+                      width: 1.0,
+                      color: bottomBorderColor.withOpacity(0.1),
+                    ),
+                    bottom: BorderSide(
+                      width: 1.0,
+                      color: bottomBorderColor,
+                    ),
+                  ),
+                ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: SparkLineChart(
