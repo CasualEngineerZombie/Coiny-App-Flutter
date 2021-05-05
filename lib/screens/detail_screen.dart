@@ -157,6 +157,15 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ),
               Container(
+                margin: EdgeInsets.all(8),
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    width: 2,
+                    color: borderColor.withOpacity(0.1)
+                  )
+                ),
                 child: TextButton(
                   onPressed: () {},
                   child: Row(
