@@ -88,6 +88,11 @@ final Widget scanner = SvgPicture.asset(
   scannerLogo,
 );
 
+final String bitcoinLogo = 'assets/Bitcoin-1.svg';
+final Widget bitcoin = SvgPicture.asset(
+  bitcoinLogo,
+);
+
 const mainColor = Color(0xff00CA78);
 const bottomBorderColor = Color(0xff707070);
 const btcTickerColor = Color(0xffFFB119);
