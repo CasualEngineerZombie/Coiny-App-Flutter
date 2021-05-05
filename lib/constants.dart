@@ -83,6 +83,11 @@ final Widget passport = SvgPicture.asset(
   passportLogo,
 );
 
+final String scannerLogo = 'assets/Scanner.svg';
+final Widget scanner = SvgPicture.asset(
+  scannerLogo,
+);
+
 const mainColor = Color(0xff00CA78);
 const bottomBorderColor = Color(0xff707070);
 const btcTickerColor = Color(0xffFFB119);

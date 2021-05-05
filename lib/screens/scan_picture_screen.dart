@@ -1,4 +1,6 @@
 import 'package:coiny/constants.dart';
+import 'package:coiny/screens/main_dashboard.dart';
+import 'package:coiny/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 class ScanPictureScreen extends StatefulWidget {
@@ -50,14 +52,47 @@ class _ScanPictureScreenState extends State<ScanPictureScreen> {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 10,
               ),
               Container(
                 width: double.infinity,
                 height: _height * 0.4,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.red
+                ),
+                child: scanner,
+              ),
+              HomeButton(
+                borderRadius: 20,
+                verticalPadding: 10,
+                height: _height * 0.08,
+                width: _width,
+                textValue: 'Take Photo',
+                buttonColor: mainColor,
+                textColor: Colors.white,
+                onPressedValue: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => MainDashboardScreen(),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              HomeButton(
+                borderRadius: 20,
+                verticalPadding: 10,
+                height: _height * 0.08,
+                width: _width,
+                textValue: 'Continue',
+                buttonColor: null,
+                textColor: Colors.black,
+                onPressedValue: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => MainDashboardScreen(),
+                  ),
                 ),
               ),
             ],

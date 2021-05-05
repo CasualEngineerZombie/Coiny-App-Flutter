@@ -1,17 +1,16 @@
-import 'package:coiny/screens/phone_confirmation.dart';
-import 'package:coiny/widgets/buttons.dart';
+import 'package:coiny/models/model.dart';
+import 'package:coiny/screens/detail_screen.dart';
 import 'package:coiny/widgets/crypto_board.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
-import '../models/model.dart';
 
-class DashBoardScreen extends StatefulWidget {
+class MainDashboardScreen extends StatefulWidget {
   @override
-  _DashBoardScreenState createState() => _DashBoardScreenState();
+  _MainDashboardScreenState createState() => _MainDashboardScreenState();
 }
 
-class _DashBoardScreenState extends State<DashBoardScreen> {
+class _MainDashboardScreenState extends State<MainDashboardScreen> {
   int _selectedItemIndex = 3;
   bool isActive = true;
   @override
@@ -19,63 +18,53 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        elevation: 0,
+        title: Text(
+          'US\$0.00',
+          style: TextStyle(
+            fontFamily: 'SF',
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        leading: IconButton(
+          icon: customBackButton,
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10),
           height: _height,
           child: Column(
             children: [
-              SizedBox(height: 60),
-              Align(
-                alignment: Alignment.center,
-                child: Container(
-                  child: dashboardLogoMid,
-                ),
+              SizedBox(
+                height: 10,
               ),
-              SizedBox(height: 10),
-              Container(
-                width: _width * 0.9,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'You\'re almost\nready to invest.',
-                      style: TextStyle(fontSize: 24, fontFamily: 'SF'),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              HomeButton(
-                borderRadius: 20,
-                verticalPadding: 10,
-                height: _height * 0.08,
-                width: _width * 0.93,
-                textValue: 'Complete account setup',
-                buttonColor: mainColor,
-                textColor: Colors.white,
-                onPressedValue: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => PhoneConfirmationScreen(),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
               Expanded(
                 child: ListView(
                   children: [
-                    CryptoBoard(
-                      height: _height,
-                      width: _width,
-                      cryptoName: 'Bitcoin',
-                      cryptoPrice: '\$56,000.00',
-                      cryptoPriceIncrease: '+US\$3523.0 (4.24%)',
-                      cryptoTicker: 'BTC',
-                      sparkLineColor: mainColor,
-                      sparkLineData: data,
-                      sparkLineFillColor: chartFillColor,
+                    GestureDetector(
+                      onTap: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => DetailScreen(),
+                        ),
+                      ),
+                      child: CryptoBoard(
+                        height: _height,
+                        width: _width,
+                        cryptoName: 'Bitcoin',
+                        cryptoPrice: '\$56,000.00',
+                        cryptoPriceIncrease: '+US\$3523.0 (4.24%)',
+                        cryptoTicker: 'BTC',
+                        sparkLineColor: mainColor,
+                        sparkLineData: data,
+                        sparkLineFillColor: chartFillColor,
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -90,6 +79,20 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       sparkLineColor: sparkLineColor2,
                       sparkLineData: data,
                       sparkLineFillColor: chartFillColor2,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CryptoBoard(
+                      height: _height,
+                      width: _width,
+                      cryptoName: 'Lite Coin',
+                      cryptoPrice: '\$344.53',
+                      cryptoPriceIncrease: '+US\$65.0 (47.99%)',
+                      cryptoTicker: 'LTC',
+                      sparkLineColor: Color(0Xff19B2FF),
+                      sparkLineData: data,
+                      sparkLineFillColor: Color(0Xff19B2FF).withOpacity(0.1),
                     ),
                   ],
                 ),

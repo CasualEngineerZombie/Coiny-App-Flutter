@@ -152,3 +152,65 @@ class CryptoBoard extends StatelessWidget {
     );
   }
 }
+
+class CryptoBoardDetail extends StatelessWidget {
+  CryptoBoardDetail({
+    @required this.height,
+    @required this.width,
+    @required this.borderAppearance,
+    this.cryptoName,
+    this.cryptoPrice,
+    this.cryptoPriceIncrease,
+    this.cryptoTicker,
+    this.sparkLineColor,
+    this.sparkLineFillColor,
+    this.sparkLineData,
+    this.borderColor,
+  });
+
+  final double height;
+  final double width;
+  final sparkLineColor;
+  final sparkLineFillColor;
+  final sparkLineData;
+  final cryptoName;
+  final cryptoTicker;
+  final cryptoPrice;
+  final cryptoPriceIncrease;
+  final borderColor;
+  final bool borderAppearance;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        border: borderAppearance == true
+            ? Border.all(
+                color: borderColor,
+                width: 2,
+              )
+            : null,
+      ),
+      child: Container(
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: SparkLineChart(
+                    lineColor: sparkLineColor,
+                    dataLine: sparkLineData,
+                    fillColor: sparkLineFillColor,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

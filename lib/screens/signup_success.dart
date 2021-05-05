@@ -1,4 +1,5 @@
 import 'package:coiny/screens/dashboard.dart';
+import 'package:coiny/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -76,48 +77,6 @@ class _SignupSuccessScreenState extends State<SignupSuccessScreen> {
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class HomeButton extends StatelessWidget {
-  HomeButton({
-    this.textValue,
-    this.buttonColor,
-    this.width,
-    this.textColor,
-    this.onPressedValue, int borderRadius,
-  });
-
-  final textValue;
-  final textColor;
-  final buttonColor;
-  final width;
-  final onPressedValue;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      child: TextButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(buttonColor),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50.0))),
-        ),
-        onPressed: onPressedValue,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 17),
-          child: Text(
-            textValue,
-            style: TextStyle(
-              color: textColor,
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
           ),
         ),
       ),
