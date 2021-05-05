@@ -195,7 +195,7 @@ class CryptoBoardDetail extends StatelessWidget {
                       color: bottomBorderColor.withOpacity(0.1),
                     ),
                     bottom: BorderSide(
-                      width: 2.0,
+                      width: 2,
                       color: bottomBorderColor.withOpacity(0.1),
                     ),
                   ),
