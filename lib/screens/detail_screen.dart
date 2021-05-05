@@ -161,9 +161,15 @@ class _DetailScreenState extends State<DetailScreen> {
                   onPressed: () {},
                   child: Row(
                     children: [
-                      Row(children: [
-                        Icon(icon)
-                      ],)
+                      Row(
+                        children: [
+                          bitcoin,
+                          Text(
+                            'BTC Wallet',
+                            style: TextStyle(fontFamily: 'SF', fontSize: 14),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
