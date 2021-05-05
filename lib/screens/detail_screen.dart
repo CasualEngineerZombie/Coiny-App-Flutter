@@ -89,12 +89,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 sparkLineData: data,
                 sparkLineFillColor: Color(0Xff19B2FF).withOpacity(0.1),
               ),
-              VerticalDivider(
-                color: borderColor.withOpacity(0.25),
-                thickness: 1,
-                indent: 10,
-                endIndent: 10,
-              ),
+              
             ],
           ),
         ),
