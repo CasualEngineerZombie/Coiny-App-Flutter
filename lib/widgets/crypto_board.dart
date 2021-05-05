@@ -164,7 +164,6 @@ class CryptoBoardDetail extends StatelessWidget {
     this.sparkLineColor,
     this.sparkLineFillColor,
     this.sparkLineData,
-    this.borderColor,
   });
 
   final double height;
@@ -176,7 +175,6 @@ class CryptoBoardDetail extends StatelessWidget {
   final cryptoTicker;
   final cryptoPrice;
   final cryptoPriceIncrease;
-  final borderColor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -186,11 +184,11 @@ class CryptoBoardDetail extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         border: Border(
           top: BorderSide(
-            color: borderColor,
+            color: bottomBorderColor,
             width: 2,
           ),
           bottom: BorderSide(
-            color: borderColor,
+            color: bottomBorderColor,
             width: 2,
           ),
         ),
