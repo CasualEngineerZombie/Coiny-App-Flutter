@@ -73,7 +73,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 height: 20,
               ),
               CryptoBoardDetail(
-                height: _height * 0.5,
+                height: _height * 0.4,
                 width: _width,
                 cryptoName: 'Lite Coin',
                 cryptoPrice: '\$344.53',
