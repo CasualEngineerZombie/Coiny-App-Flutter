@@ -79,9 +79,9 @@ class _DetailScreenState extends State<DetailScreen> {
                 cryptoPrice: '\$344.53',
                 cryptoPriceIncrease: '+US\$65.0 (47.99%)',
                 cryptoTicker: 'LTC',
-                sparkLineColor: Color(0Xff19B2FF),
+                sparkLineColor: sparkLineColor2,
                 sparkLineData: data,
-                sparkLineFillColor: Color(0Xff19B2FF).withOpacity(0.1),
+                sparkLineFillColor: sparkLineColor2.withOpacity(0.1),
               ),
               
             ],
