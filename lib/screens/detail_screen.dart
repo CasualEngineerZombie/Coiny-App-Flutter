@@ -186,12 +186,21 @@ class _DetailScreenState extends State<DetailScreen> {
                       Row(
                         children: [
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
                                 'US\$0.00',
                                 style: TextStyle(
                                   fontFamily: 'SF',
                                   fontSize: 18,
+                                  color: borderColor,
+                                ),
+                              ),
+                              Text(
+                                '0 BTC',
+                                style: TextStyle(
+                                  fontFamily: 'SF',
+                                  fontSize: 14,
                                   color: borderColor,
                                 ),
                               ),

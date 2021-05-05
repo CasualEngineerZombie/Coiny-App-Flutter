@@ -93,6 +93,11 @@ final Widget bitcoin = SvgPicture.asset(
   bitcoinLogo,
 );
 
+final String rightArrowLogo = 'assets/right arrow.svg';
+final Widget rightArrow = SvgPicture.asset(
+  rightArrowLogo,
+);
+
 const mainColor = Color(0xff00CA78);
 const bottomBorderColor = Color(0xff707070);
 const btcTickerColor = Color(0xffFFB119);
