@@ -138,7 +138,9 @@ class _DetailScreenState extends State<DetailScreen> {
                         onPressedValue: () {},
                       ),
                     ),
-                    SizedBox(width: 5,),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Expanded(
                       child: HomeButton(
                         borderRadius: 20,
@@ -152,6 +154,18 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                child: TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Row(children: [
+                        Icon(icon)
+                      ],)
+                    ],
+                  ),
                 ),
               )
             ],
