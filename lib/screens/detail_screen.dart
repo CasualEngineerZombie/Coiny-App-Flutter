@@ -157,67 +157,70 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ),
               ClipRRect(
-                borderRadius: BorderRadius.circular(20),
                 child: Container(
                   margin: EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                           width: 2, color: borderColor.withOpacity(0.1))),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
+                  child: Wrap(
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              bitcoin,
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                'BTC Wallet',
-                                style: TextStyle(
-                                    fontFamily: 'SF',
-                                    fontSize: 14,
-                                    color: Colors.black),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
+                              Row(
                                 children: [
-                                  Text(
-                                    'US\$0.00',
-                                    style: TextStyle(
-                                      fontFamily: 'SF',
-                                      fontSize: 18,
-                                      color: borderColor,
-                                    ),
+                                  bitcoin,
+                                  SizedBox(
+                                    width: 5,
                                   ),
                                   Text(
-                                    '0 BTC',
+                                    'BTC Wallet',
                                     style: TextStyle(
-                                      fontFamily: 'SF',
-                                      fontSize: 14,
-                                      color: borderColor,
-                                    ),
+                                        fontFamily: 'SF',
+                                        fontSize: 14,
+                                        color: Colors.black),
                                   ),
                                 ],
                               ),
-                              SizedBox(
-                                width: 20,
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        'US\$0.00',
+                                        style: TextStyle(
+                                          fontFamily: 'SF',
+                                          fontSize: 18,
+                                          color: borderColor,
+                                        ),
+                                      ),
+                                      Text(
+                                        '0 BTC',
+                                        style: TextStyle(
+                                          fontFamily: 'SF',
+                                          fontSize: 14,
+                                          color: borderColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  rightArrow,
+                                ],
                               ),
-                              rightArrow,
                             ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               )
