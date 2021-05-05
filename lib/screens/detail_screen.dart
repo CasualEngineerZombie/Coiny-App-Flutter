@@ -1,4 +1,5 @@
 import 'package:coiny/models/model.dart';
+import 'package:coiny/widgets/buttons.dart';
 import 'package:coiny/widgets/crypto_board.dart';
 import 'package:flutter/material.dart';
 
@@ -100,14 +101,43 @@ class _DetailScreenState extends State<DetailScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: Row(
                   children: [
-                    MonthButton(textValue: '1H', color: borderColor.withOpacity(0.5),),
-                    MonthButton(textValue: '1D', color: borderColor.withOpacity(0.5),),
-                    MonthButton(textValue: '1M', color: borderColor.withOpacity(0.5),),
-                    MonthButton(textValue: '1Y', color: borderColor.withOpacity(0.5),),
-                    MonthButton(textValue: 'ALL', color: borderColor.withOpacity(0.5)),
+                    MonthButton(
+                      textValue: '1H',
+                      color: borderColor.withOpacity(0.5),
+                    ),
+                    MonthButton(
+                      textValue: '1D',
+                      color: borderColor.withOpacity(0.5),
+                    ),
+                    MonthButton(
+                      textValue: '1M',
+                      color: borderColor.withOpacity(0.5),
+                    ),
+                    MonthButton(
+                      textValue: '1Y',
+                      color: borderColor.withOpacity(0.5),
+                    ),
+                    MonthButton(
+                        textValue: 'ALL', color: borderColor.withOpacity(0.5)),
                   ],
                 ),
               ),
+              Row(
+                children: [
+                  Expanded(
+                    child:  HomeButton(
+                borderRadius: 20,
+                verticalPadding: 10,
+                height: _height * 0.08,
+                width: _width,
+                textValue: 'Take Photo',
+                buttonColor: mainColor,
+                textColor: Colors.white,
+                onPressedValue: (){},
+              ),
+                  )
+                ],
+              )
             ],
           ),
         ),
