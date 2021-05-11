@@ -1,4 +1,5 @@
 import 'package:coiny/models/model.dart';
+import 'package:coiny/screens/trade/transactions.dart';
 import 'package:coiny/widgets/buttons.dart';
 import 'package:coiny/widgets/crypto_board.dart';
 import 'package:flutter/material.dart';
@@ -163,64 +164,67 @@ class _DetailScreenState extends State<DetailScreen> {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                           width: 2, color: borderColor.withOpacity(0.1))),
-                  child: Wrap(
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  bitcoin,
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    'BTC Wallet',
-                                    style: TextStyle(
-                                        fontFamily: 'SF',
-                                        fontSize: 14,
-                                        color: Colors.black),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Text(
-                                        'US\$0.00',
-                                        style: TextStyle(
-                                          fontFamily: 'SF',
-                                          fontSize: 18,
-                                          color: borderColor,
-                                        ),
-                                      ),
-                                      Text(
-                                        '0 BTC',
-                                        style: TextStyle(
-                                          fontFamily: 'SF',
-                                          fontSize: 14,
-                                          color: borderColor,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  rightArrow,
-                                ],
-                              ),
-                            ],
-                          ),
+                  child: InkWell(
+                    child: GestureDetector(
+                      onTap: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => TransactionScreen(),
                         ),
                       ),
-                    ],
+                      child: Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                bitcoin,
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  'BTC Wallet',
+                                  style: TextStyle(
+                                      fontFamily: 'SF',
+                                      fontSize: 14,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      'US\$0.00',
+                                      style: TextStyle(
+                                        fontFamily: 'SF',
+                                        fontSize: 18,
+                                        color: borderColor,
+                                      ),
+                                    ),
+                                    Text(
+                                      '0 BTC',
+                                      style: TextStyle(
+                                        fontFamily: 'SF',
+                                        fontSize: 14,
+                                        color: borderColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                rightArrow,
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               )

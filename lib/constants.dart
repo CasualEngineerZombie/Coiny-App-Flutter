@@ -43,7 +43,7 @@ final Widget bottomNav4 = SvgPicture.asset(
   bottomNavLogo4,
 );
 
-final String customBackButtonLogo = 'assets/Cancel.svg';
+final String customBackButtonLogo = 'assets/Cancel Black.svg';
 final Widget customBackButton = SvgPicture.asset(
   customBackButtonLogo,
 );
@@ -96,6 +96,11 @@ final Widget bitcoin = SvgPicture.asset(
 final String rightArrowLogo = 'assets/right arrow.svg';
 final Widget rightArrow = SvgPicture.asset(
   rightArrowLogo,
+);
+
+final String backWhiteLogo = 'assets/Cancel.svg';
+final Widget backWhite = SvgPicture.asset(
+  backWhiteLogo,
 );
 
 const mainColor = Color(0xff00CA78);
