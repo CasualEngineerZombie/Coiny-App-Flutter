@@ -1,15 +1,14 @@
-import 'package:coiny/screens/trade/transaction_boards.dart';
 import 'package:coiny/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 
-class TransactionScreen extends StatefulWidget {
+class TransactionBoard extends StatefulWidget {
   @override
-  _TransactionScreenState createState() => _TransactionScreenState();
+  _TransactionBoardState createState() => _TransactionBoardState();
 }
 
-class _TransactionScreenState extends State<TransactionScreen> {
+class _TransactionBoardState extends State<TransactionBoard> {
   int _selectedItemIndex = 3;
   @override
   Widget build(BuildContext context) {
@@ -111,85 +110,94 @@ class _TransactionScreenState extends State<TransactionScreen> {
                       SizedBox(
                         height: 40.0,
                       ),
-                      Flexible( 
-                        child: Container(
-                          width: double.infinity,
-                          constraints: BoxConstraints(
-                            minHeight:
-                                MediaQuery.of(context).size.height - 180.0,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30.0),
-                              topRight: Radius.circular(30.0),
-                            ),
-                            color: Colors.white,
-                          ),
-                          padding: EdgeInsets.all(24.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Row(
+                      Container(
+                        color: Colors.white,
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Flexible(
+                          child: Positioned(
+                            top: 20,
+                            child: Container(
+                              width: double.infinity,
+                              constraints: BoxConstraints(
+                                minHeight:
+                                    MediaQuery.of(context).size.height - 180.0,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30.0),
+                                  topRight: Radius.circular(30.0),
+                                ),
+                                color: Colors.grey,
+                              ),
+                              padding: EdgeInsets.all(24.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  Expanded(
-                                    child: HomeButton(
-                                      borderRadius: 20,
-                                      verticalPadding: 10,
-                                      height: _height * 0.08,
-                                      width: _width,
-                                      textValue: 'Buy',
-                                      buttonColor: Colors.black,
-                                      textColor: Colors.white,
-                                      onPressedValue: () {},
-                                    ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: HomeButton(
+                                          borderRadius: 20,
+                                          verticalPadding: 10,
+                                          height: _height * 0.08,
+                                          width: _width,
+                                          textValue: 'Buy',
+                                          buttonColor: Colors.black,
+                                          textColor: Colors.white,
+                                          onPressedValue: () {},
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
+                                      Expanded(
+                                        child: HomeButton(
+                                          borderRadius: 20,
+                                          verticalPadding: 10,
+                                          height: _height * 0.08,
+                                          width: _width,
+                                          textValue: 'Sell',
+                                          buttonColor: mainColor,
+                                          textColor: Colors.white,
+                                          onPressedValue: () {},
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   SizedBox(
-                                    width: 5,
+                                    height: _height * 0.1,
                                   ),
-                                  Expanded(
-                                    child: HomeButton(
-                                      borderRadius: 20,
-                                      verticalPadding: 10,
-                                      height: _height * 0.08,
-                                      width: _width,
-                                      textValue: 'Sell',
-                                      buttonColor: mainColor,
-                                      textColor: Colors.white,
-                                      onPressedValue: () {},
+                                  Container(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'You have no transactions',
+                                          style: TextStyle(
+                                            fontFamily: 'SF',
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                            'Buy Bitcoin now and your\ntransactions will be shown here',
+                                            style: TextStyle(
+                                                fontFamily: 'SF',
+                                                fontSize: 14,
+                                                color: Colors.black
+                                                    .withOpacity(0.5)),
+                                            textAlign: TextAlign.center),
+                                      ],
                                     ),
                                   ),
                                 ],
                               ),
-                              SizedBox(
-                                height: _height * 0.1,
-                              ),
-                              Container(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'You have no transactions',
-                                      style: TextStyle(
-                                        fontFamily: 'SF',
-                                        fontSize: 20,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text(
-                                        'Buy Bitcoin now and your\ntransactions will be shown here',
-                                        style: TextStyle(
-                                            fontFamily: 'SF',
-                                            fontSize: 14,
-                                            color:
-                                                Colors.black.withOpacity(0.5)),
-                                        textAlign: TextAlign.center),
-                                  ],
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                       ),

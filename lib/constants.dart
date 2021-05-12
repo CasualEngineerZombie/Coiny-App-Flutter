@@ -48,6 +48,11 @@ final Widget customBackButton = SvgPicture.asset(
   customBackButtonLogo,
 );
 
+final String customBackButtonWhiteLogo = 'assets/Cancel.svg';
+final Widget customBackButtonWhite = SvgPicture.asset(
+  customBackButtonWhiteLogo,
+);
+
 final String verifyPhoneLogo = 'assets/Verify Phone.svg';
 final Widget verifyPhone = SvgPicture.asset(
   verifyPhoneLogo,
@@ -101,6 +106,16 @@ final Widget rightArrow = SvgPicture.asset(
 final String backWhiteLogo = 'assets/Cancel.svg';
 final Widget backWhite = SvgPicture.asset(
   backWhiteLogo,
+);
+
+final String gridLogo = 'assets/grid.svg';
+final Widget grid = SvgPicture.asset(
+  gridLogo,
+);
+
+final String sendLogo = 'assets/send-plane-2-fill.svg';
+final Widget send = SvgPicture.asset(
+  sendLogo,
 );
 
 const mainColor = Color(0xff00CA78);

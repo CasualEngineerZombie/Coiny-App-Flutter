@@ -29,12 +29,16 @@ class HomeButton extends StatelessWidget {
       child: TextButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(buttonColor),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius))),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+          ),
         ),
         onPressed: onPressedValue,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: verticalPadding),
+          padding:
+              EdgeInsets.symmetric(horizontal: 25, vertical: verticalPadding),
           child: Text(
             textValue,
             style: TextStyle(
