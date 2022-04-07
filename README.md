@@ -1,5 +1,5 @@
 # Coiny Flutter App
-### A Flutter prototype app create in flutter, inspired by Coiny UI 
+### A Flutter prototype app created in flutter, inspired by Coiny UI 
  
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
